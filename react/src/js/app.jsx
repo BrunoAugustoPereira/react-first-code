@@ -3,6 +3,7 @@ import React from 'react';
 
 import Title from './title/title';
 import Navbar from './navbar/navbar';
+import Card from './card/card';
 
 let app = (
   <div>
@@ -10,6 +11,17 @@ let app = (
     <div className="container">
       <Title />
       <h1>Ola Mundo</h1>
+      <div className="row">
+        <div className = "col m4">
+          <Card />
+        </div>
+        <div className = "col m4">
+          <Card />
+        </div>
+        <div className = "col m4">
+          <Card />
+        </div>
+      </div>
     </div>
   </div>
 );
