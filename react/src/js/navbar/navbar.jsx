@@ -1,5 +1,7 @@
 import React from 'react';
 
+import NavMenu from './nav-menu';
+
 class Navbar extends React.Component{
   render(){
     let menu =[
@@ -8,21 +10,13 @@ class Navbar extends React.Component{
       {Title:"Contact",Link:"#contact"}
     ];
 
-    let list =menu.map(function(ListItem){
-      return(
-        <li key = {ListItem.Title} ><a href={ListItem.Link}>{ListItem.Title}</a></li>
-      );
-    });
-
     let colornav="nav-wrapper "+this.props.Color;
     return (
       <nav>
         <div className={colornav}>
           <div className="container">
             <a href="#" className="brand-logo">{this.props.Title}</a>
-            <ul id="nav-mobile" className="right">
-              {list}
-            </ul>
+            <NavMenu menu={menu} />
           </div>
         </div>
       </nav>
