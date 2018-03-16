@@ -2,6 +2,18 @@ import React from 'react';
 
 class Navbar extends React.Component{
   render(){
+    let menu =[
+      {Title:"Home",Link:"#home"},
+      {Title:"AboutUs",Link:"#aboutus"},
+      {Title:"Contact",Link:"#contact"}
+    ];
+
+    let list =menu.map(function(ListItem){
+      return(
+        <li key = {ListItem.Title} ><a href={ListItem.Link}>{ListItem.Title}</a></li>
+      );
+    });
+
     let colornav="nav-wrapper "+this.props.Color;
     return (
       <nav>
@@ -9,9 +21,7 @@ class Navbar extends React.Component{
           <div className="container">
             <a href="#" className="brand-logo">{this.props.Title}</a>
             <ul id="nav-mobile" className="right">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
-              <li><a href="collapsible.html">JavaScript</a></li>
+              {list}
             </ul>
           </div>
         </div>
